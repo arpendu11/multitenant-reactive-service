@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: multitenant-reactive-service
+  data:
+    mongodb:
+      authentication-database: admin
+      uri: mongodb://spring:password@127.0.0.1:27017/master?authSource=admin&retryWrites=true&w=majority
+      database: master
+      host: 127.0.0.1
+      port: 27017
+      username: spring
+      password: password
+
+server:
+  port: 8080
+  http2:
+    enabled: true
+
+logging:
+  level:
+    org:
+      springframework:
+        web: INFO
+        data:
+          mongodb:
+            core:
+              ReactiveMongoTemplate: DEBUG
